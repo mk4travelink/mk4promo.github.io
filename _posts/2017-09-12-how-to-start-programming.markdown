@@ -3,7 +3,7 @@ layout: post
 title: "Unlock the World's Best Cities: The Ultimate Guide to Go City Passes"
 date: 2026-06-1 
 description: "Discover how Go City sightseeing passes can save you up to 50% on attractions in 28 destinations worldwide. Flexible, digital, and packed with value."
-img: gocity-banner.jpg
+img: gocity.png.png
 tags: [travel, sightseeing, city-breaks, gocity, attractions]
 ---
 
