@@ -1548,27 +1548,30 @@ figure img {
     max-height: 200px;
   }
 }
-/* === توحيد أبعاد الصور المصغرة في الصفحة الرئيسية === */
+/* === توحيد أبعاد الصور المصغرة في الصفحة الرئيسية (بطريقة أكثر دقة) === */
 .post .post-thumbnail {
   width: 30%;
-  min-height: 200px;          /* ارتفاع ثابت لجميع الصور المصغرة */
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   flex-shrink: 0;
+  /* تحديد نسبة أبعاد ثابتة 16:9 باستخدام padding-top */
+  padding-top: 18.75%; /* 16:9 = 9/16 = 0.5625 = 56.25% لكن هنا نستخدم نسبة مئوية أقل لأن العرض 30% */
+  height: 0;
+  min-height: unset;
 }
 
-/* تحسين المظهر على الأجهزة المتوسطة */
+/* تعويض الارتفاع للشاشات الصغيرة */
 @media only screen and (max-width: 992px) {
   .post .post-thumbnail {
     width: 100%;
-    min-height: 200px;        /* ارتفاع ثابت حتى في الشاشات الصغيرة */
+    padding-top: 56.25%; /* 16:9 على العرض الكامل */
   }
 }
 
-/* تحسين المظهر على الهواتف */
 @media only screen and (max-width: 480px) {
   .post .post-thumbnail {
-    min-height: 150px;        /* ارتفاع أقل قليلاً للشاشات الصغيرة جداً */
+    padding-top: 56.25%;
   }
 }
